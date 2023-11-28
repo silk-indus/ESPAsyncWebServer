@@ -824,6 +824,7 @@ void AsyncWebSocketClient::binary(const __FlashStringHelper *data, size_t len){
 }
 void AsyncWebSocketClient::binary(AsyncWebSocketMessageBuffer * buffer)
 {
+  if (_messageQueue.isEmpty()) // SI edit
   _queueMessage(new AsyncWebSocketMultiMessage(buffer, WS_BINARY));
 }
 
